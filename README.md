@@ -65,7 +65,13 @@ E.g.:
 
 ## R Packages
 
-Currently, the following R packages are installed: 
+Currently, the below-listed R packages are installed. To add more packages, re-build the Docker image after adding the package to the Dockerfile as follows:
+
+```
+RUN R -e 'install.packages("zoo", repos = "http://cran.rstudio.com/")'
+```
+
+### Installed Packages
 
 - data.table
 - ggivs
@@ -99,9 +105,3 @@ Currently, the following R packages are installed:
 - xtable
 - xts
 - zoo
-
-To add more packages, add them to the Dockerfile as follows: 
-
-```
-RUN R -e 'install.packages("zoo", repos = "http://cran.rstudio.com/")'
-```
