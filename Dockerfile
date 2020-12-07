@@ -26,7 +26,39 @@ r-base-dev \
 r-recommended
 
 # Install R packages
-RUN R -e 'install.packages("rjson", repos = "http://cran.rstudio.com/")'
+RUN R -e 'install.packages("tidyverse", repos = "http://cran.rstudio.com/")' \
+	# ggplot2
+    # dplyr
+    # tidyr
+    # readr
+    # purrr
+    # tibble
+    # stringr
+    # forcats
+&& R -e 'install.packages("lubridate", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("XML", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("jsonlite", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("rjson", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("data.table", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("zoo", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("xts", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("quantmod", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("sp", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("maptools", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("maps", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("ggmap", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("xtable", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("graphics", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("ggivs", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("htmlwidgets", repos = "http://cran.rstudio.com/")' \
+    # leaflet
+    # dygraphs
+    # DT
+    # diagrammeR
+    # network3D
+    # threeJS
+&& R -e 'install.packages("maps", repos = "http://cran.rstudio.com/")' \
+&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 
 # Make microservice directories

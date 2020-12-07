@@ -38,12 +38,12 @@
 {% if code %}
 <div id="codeeditor">{{ code }}</div>
 {% else %}
-<div id="codeeditor">library("rjson")
+<div id="codeeditor">suppressMessages(library("jsonlite"))
 
 readJson <- function(inputFile) {
-    json <- fromJSON(file = inputFile)
+    json <- fromJSON(inputFile)
     dataFrame <- as.data.frame(json)
-    as.character(dataFrame$message)
+    return(as.character(dataFrame$message))
 }
 
 readJson("yourData.json")

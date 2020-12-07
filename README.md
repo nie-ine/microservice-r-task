@@ -67,11 +67,41 @@ E.g.:
 
 Currently, the following R packages are installed: 
 
+- data.table
+- ggivs
+- ggmap
+- graphics
+- htmlwidgets
+  - diagrammeR
+  - DT
+  - dygraphs
+  - leaflet
+  - network3D
+  - threeJS
+- jsonlite
+- lubridate
+- maps
+- maps
+- maptools
+- quantmod
 - rjson
-
+- sp
+- tidyverse
+  - dplyr
+  - forcats
+  - ggplot2
+  - purrr
+  - readr
+  - stringr
+  - tibble
+  - tidyr
+- XML
+- xtable
+- xts
+- zoo
 
 To add more packages, add them to the Dockerfile as follows: 
 
 ```
-RUN R -e 'install.packages("rjson", repos = "http://cran.rstudio.com/")'
+RUN R -e 'install.packages("zoo", repos = "http://cran.rstudio.com/")'
 ```
