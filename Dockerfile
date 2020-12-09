@@ -58,6 +58,7 @@ RUN R -e 'install.packages("tidyverse", repos = "http://cran.rstudio.com/")' \
     # network3D
     # threeJS
 && R -e 'install.packages("maps", repos = "http://cran.rstudio.com/")' \
+&& R -e 'install.packages("ngram", repos = "http://cran.rstudio.com/")' \
 && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 

@@ -89,6 +89,7 @@ RUN R -e 'install.packages("zoo", repos = "http://cran.rstudio.com/")'
 - maps
 - maps
 - maptools
+- ngram
 - quantmod
 - rjson
 - sp
