@@ -44,10 +44,10 @@ Response:
 E.g.: 
 ```
 {
-	"datafile":"yourData.json",
-	"data":"{\n    \"message\": \"Hello World!\"\n}\n",
-	"codefile":"yourCode.R",
-	"code":"library(\"rjson\")\n\nreadJson <- function(inputFile) {\n    json <- fromJSON(file = inputFile)\n    dataFrame <- as.data.frame(json)\n    as.character(dataFrame$message)\n}\n\nreadJson(\"yourData.json\")\n"
+  "datafile": "yourData.json",
+  "data": "{\n    \"message\": \"Hello World!\"\n}\n",
+  "codefile": "yourCode.R",
+  "code": "suppressMessages(library(\"jsonlite\"))\n\nreadJson <- function(inputFile) {\n    json <- fromJSON(inputFile)\n    dataFrame <- as.data.frame(json)\n    return(as.character(dataFrame$message))\n}\n\nreadJson(\"yourData.json\")\n"
 }
 
 ```
